@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+
+
+
+
+  <div style="display: flex; align-items: center; margin-left: 20px; margin-top: 30px; margin-bottom: 55px;">
+    <h1 #animatedHeader class="animated-header" style="margin-right: 10px; font-size: 32px;">Perfil</h1>
+  </div>
+
+
+
+  <div id="main-content" class="ion-padding" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
+    <div> 
+      <ion-card class="black-card" [routerLink]="['/noche']" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 20px;"> 
+        <p style="color: white; font-size: 17px; margin-top: 15px; text-align: center;">Usuario</p>
+      </ion-card>
+    </div>
+    
+    <div> 
+      <ion-card class="black-card" [routerLink]="['/noche']" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 20px;"> 
+        <p style="color: white; font-size: 17px; margin-top: 15px; text-align: center;">Correo</p>
+      </ion-card>
+    </div>
+
+    <div>
+      <ion-card (click)="logout()" class="black-card" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;"> 
+        <p style="color: white; font-size: 17px; margin-top: 15px; text-align: center;">Cerrar sesión</p>
+      </ion-card>
+    </div>
+    
+  </div>
+
+  <footer>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" style="border: 0;">
+        <ion-tab-button tab="library" [routerLink]="['/camara']">
+          <ion-icon name="qr-code-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="home" [routerLink]="['/home']">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="search" [routerLink]="['/perfil']">
+          <ion-icon style="color: #FFB267;" name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </footer>
+
+</ion-content>

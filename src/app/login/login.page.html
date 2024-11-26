@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="custom-content">
+  <form (ngSubmit)="login()" #loginForm="ngForm"> <!-- Añadir la etiqueta <form> -->
+    <ion-card class="custom-card" style="border-radius: 30px;">
+      <ion-card-content>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <b style="color: black; font-size: 18px;">Iniciar Sesión</b>
+        </div>      
+
+        <div>
+          <ion-item lines="none" class="custom-item">
+            <ion-input
+              #emailInput
+              type="email"  
+              [(ngModel)]="user.email"  
+              name="email"
+              placeholder="Email"  
+              class="custom-email-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <ion-item lines="none" class="custom-item">
+            <ion-input
+              #passwordInput
+              type="password"
+              [(ngModel)]="user.password"
+              name="password"
+              placeholder="Contraseña"
+              class="custom-password-input">
+            </ion-input>
+          </ion-item>
+        </div>
+    
+        <p style="margin-top: 20px; margin-left: 20px; color: red;" [routerLink]="['/registrarse']">Registrarse</p>
+        <p style="margin-top: 20px; margin-left: 20px; color: red;" [routerLink]="['/restablecer']">Olvidaste tu contraseña?</p>
+
+        <div style="margin-top: 30px; text-align: center;">
+          <ion-button type="submit" class="custom-button" expand="block">Entrar</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true" class="custom-content">
+  
+
+
+  <form (ngSubmit)="resetPassword()" #resetForm="ngForm"> 
+    <ion-card class="custom-card" style="border-radius: 30px;">
+      <ion-card-content>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <b style="color: black; font-size: 18px;">Restablecer Contraseña</b>
+        </div>      
+
+        <div>
+          <ion-item lines="none" class="custom-item">
+            <ion-input
+              type="email"  
+              [(ngModel)]="email"  
+              name="email"
+              placeholder="Email"  
+              class="custom-email-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center;">
+          <ion-button type="submit" class="custom-button" expand="block">Enviar Correo de Restablecimiento</ion-button>
+        </div>
+
+        <p style="margin-top: 20px; margin-left: 20px; color: red;" [routerLink]="['/login']">Volver a Iniciar Sesión</p>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true" class="custom-content">
+  <ion-card class="custom-card">
+    <ion-card-content>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <b style="color: black; font-size: 18px;">Registrarse</b>
+      </div>
+
+
+      <form (ngSubmit)="onClick()">
+        <div>
+          <ion-item lines="none" class="custom-item">
+            <ion-input 
+              #usuarioInput 
+              [(ngModel)]="user.usuario" 
+              name="usuario" 
+              placeholder="Usuario" 
+              class="custom-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <ion-item lines="none" class="custom-item">
+            <ion-input 
+              #emailInput 
+              type="email" 
+              [(ngModel)]="user.email" 
+              name="email" 
+              placeholder="Email" 
+              class="custom-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <ion-item lines="none" class="custom-item">
+            <ion-input 
+              #passwordInput 
+              type="password" 
+              [(ngModel)]="user.password" 
+              name="password" 
+              placeholder="****"
+              class="custom-input custom-password-input"> 
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <ion-item lines="none" class="custom-item">
+            <ion-input 
+              #confirmPasswordInput 
+              type="password" 
+              [(ngModel)]="user.confirmPassword"
+              name="confirmPassword" 
+              placeholder="Confirmar Contraseña" 
+              class="custom-input custom-confirm-password-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <p style="margin-top: 20px; margin-left: 20px; color: red;" [routerLink]="['/login']">Iniciar Sesión</p>
+
+        <div style="margin-top: 30px; text-align: center;">
+          <ion-button type="submit" class="custom-button" expand="block">Entrar</ion-button>
+        </div>
+      </form>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

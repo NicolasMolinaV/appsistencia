@@ -1,0 +1,20 @@
+ion-content {
+    --background: #203A43; 
+    padding: 0;
+    margin: 0;
+  }
+
+  ion-item {
+    --background: #252B2B; /* Cambia #e0e0e0 al color que prefieras */
+    opacity: 73%;
+  }
+  
+  ion-button.custom-button {
+    --background: #AEA060; /* Cambia al color de fondo deseado */
+    --color: #ffffff; /* Cambia al color de texto deseado */
+  }
+  ion-button.custom-button::part(native) {
+    background-color: #AEA060 !important; /* Cambia el color de fondo */
+    color: #ffffff !important;             /* Cambia el color del texto */
+  }
+  

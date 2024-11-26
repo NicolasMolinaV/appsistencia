@@ -1,0 +1,64 @@
+<ion-content [fullscreen]="true" style="font-family: 'Manrope', sans-serif;">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <div style="display: flex; align-items: center; margin-left: 20px; margin-top: 30px; margin-bottom: 15px;">
+    <h1 #animatedHeader class="animated-header" style="margin-right: 10px; font-size: 32px;">Admin</h1>
+  </div>
+  <ion-button style="--background: #AEA060; --color: #ffffff; align-items: center; margin-left: 20px; margin-top: 30px; margin-bottom: 15px;" (click)="toggleRegisterForm()">Agregar</ion-button>
+
+
+  <div *ngIf="isRegisterFormVisible">
+    <h2>Registrar Nuevo Usuario</h2>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Tipo de Usuario</ion-label>
+      <ion-select [(ngModel)]="tipoUsuario" placeholder="Tipo de usuario">
+        <ion-select-option value="profesor">profesor</ion-select-option>
+        <ion-select-option value="admin">admin</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button style="--background: #AEA060; --color: #ffffff;" expand="full" (click)="register()">Registrar</ion-button>
+    <ion-button expand="full" color="light" (click)="toggleRegisterForm()">Cancelar</ion-button>
+  </div>
+
+  <div *ngIf="selectedUser && !isRegisterFormVisible">
+    <h2>Editar Usuario: {{ selectedUser.usuario }}</h2>
+    <ion-item>
+      <ion-label position="stacked">Usuario</ion-label>
+      <ion-input [(ngModel)]="selectedUser.usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Tipo de Usuario</ion-label>
+      <ion-select [(ngModel)]="selectedUser.tipo_usuario" placeholder="Tipo de usuario">
+        <ion-select-option value="alumno">alumno</ion-select-option>
+        <ion-select-option value="profesor">profesor</ion-select-option>
+        <ion-select-option value="admin">admin</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button style="--background: #AEA060; --color: #ffffff;" expand="full" (click)="saveChanges()">Guardar Cambios</ion-button>
+    <ion-button expand="full" color="light" (click)="selectedUser = null">Cancelar</ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <ion-label>
+        <h2>{{ user.usuario }}</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Tipo de Usuario: {{ user.tipo_usuario }}</p>
+      </ion-label>
+      <ion-button style="--background: #AEA060; --color: #ffffff;" (click)="selectUser(user)">Editar</ion-button>
+      <ion-button color="danger" (click)="deleteUser(user)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

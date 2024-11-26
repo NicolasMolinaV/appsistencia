@@ -1,0 +1,83 @@
+/* Fondo global de la página en rojo oscuro */
+.custom-content {
+    --background: #203A43; 
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo personalizado para los inputs */
+.custom-input {
+    width: 318px;
+    height: 50px; /* Altura uniforme para todos los inputs */
+    --border-radius: 30px; 
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --placeholder-color: #000000; /* Color del texto del placeholder */
+    --color: #000000; /* Color del texto dentro del input */
+    background-color: #ffffff; /* Color de fondo del input */
+    border: 1px solid #0000003d; 
+    border-radius: 30px;
+    box-shadow: none; 
+    margin: 0; 
+}
+
+/* Estilo específico para el campo de Contraseña */
+.custom-password-input {
+    background-color: #f0f0f0; /* Cambia el color de fondo a gris claro */
+}
+
+/* Estilo específico para el campo de Confirmar Contraseña */
+.custom-confirm-password-input {
+    background-color: #f0f0f0; /* Cambia el color de fondo a gris claro */
+}
+/* Estilo para el botón */
+.custom-button {
+    padding-left: 20px;
+    width: 318px;
+    height: 50px; 
+    --background: #AEA060; 
+    --color: #ffffff; 
+    --border-radius: 30px; 
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --border-color: #b0b0b0; 
+    text-transform: none; 
+}
+
+/* Estilo para el ion-item que contiene los inputs */
+.custom-item {
+    --background: transparent; 
+    box-shadow: none; 
+}
+
+/* Estilo para la tarjeta blanca */
+.custom-card {
+    --background: #ffffff; 
+    --border-radius: 30px; 
+    width: 350px; 
+    height: auto; 
+    margin: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin-top: 150px; 
+    border-radius: 30px;
+}
+
+/* Estilo para el contenedor de la imagen superior */
+.image-container {
+    position: absolute; 
+    top: 130px; 
+    left: 50%; /* Cambiado a 50% para centrar */
+    transform: translateX(-50%); 
+    width: 100%; 
+}
+
+/* Estilo para la imagen superior */
+.top-image {
+    width: 132px; 
+    height: auto; 
+    display: block; 
+}
