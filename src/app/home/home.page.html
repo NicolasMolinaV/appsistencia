@@ -1,48 +1,26 @@
-<ion-content [fullscreen]="true" style="font-family: 'Manrope', sans-serif; ">
-
+<ion-content [fullscreen]="true" style="font-family: 'Manrope', sans-serif;">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
-
 
   <div style="display: flex; align-items: center; margin-left: 20px; margin-top: 30px; margin-bottom: 55px;">
     <h1 #animatedHeader class="animated-header" style="margin-right: 10px; font-size: 32px;">Tu asistencia</h1>
+    <ion-tab-button style="margin-left: 30px;" tab="library" (click)="loadData()">
+      <ion-icon name="refresh-outline"></ion-icon>
+    </ion-tab-button>
   </div>
 
   <div id="main-content" class="ion-padding">
-    <div>
-      <ion-card class="black-card" [routerLink]="['/noche']" style="width: 306px; height: 76px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;"> 
-        <div style="display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 16px; margin-top: 10px;">
-          <p style="color: white; font-size: 17px;">Lenguaje</p>
-          <ion-card-subtitle style="color: white; text-align: center; opacity: 60%;">100%</ion-card-subtitle>
-          <ion-img src="assets/imagenes/lenguaje.png" style="width: 59px; height: 59px; opacity: 63%;"></ion-img>
+    <div *ngFor="let data of attendanceData">
+      <ion-card class="black-card" style="width: 306px; height: 80px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 16px; margin-top: 5px;">
+          <p style="color: white; font-size: 17px;">{{ data.className }}</p>
+          <ion-card-subtitle style="color: white; text-align: center; opacity: 60%;">{{ data.percentage }}%</ion-card-subtitle>
+          <ion-img [src]="'assets/imagenes/' + getImage(data.className)" style="width: 59px; height: 59px; opacity: 63%;"></ion-img>
         </div>
       </ion-card>
-  
-      <ion-card class="black-card" [routerLink]="['/fueradecasa']" style="width: 306px; height: 76px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;"> 
-        <div style="display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 16px; margin-top: 10px;">
-          <p style="color: white; font-size: 17px; flex-shrink: 0;">Matemáticas</p>
-          <ion-card-subtitle style="color: white; opacity: 60%; flex-grow: 1; text-align: center;">90%</ion-card-subtitle>
-          <ion-img src="assets/imagenes/matematicas.png" style="width: 40px; height: 40px; flex-shrink: 0; margin-left: 40px; opacity: 63%;"></ion-img>
-        </div>
-      </ion-card>
-  
-      <ion-card class="black-card" [routerLink]="['/nomolestar']" style="width: 306px; height: 76px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;"> 
-        <div style="display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 16px; margin-top: 10px;">
-          <p style="color: white; font-size: 17px; flex-shrink: 0;">Historia</p>
-          <ion-card-subtitle style="color: white; opacity: 60%; flex-grow: 1; text-align: center;">95%</ion-card-subtitle>
-          <ion-img src="assets/imagenes/historia.png" style="width: 59px; height: 59px; flex-shrink: 0; opacity: 63%;"></ion-img>
-        </div>
-      </ion-card>
-
-      <ion-card class="black-card" [routerLink]="['/nomolestar']" style="width: 306px; height: 76px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;"> 
-        <div style="display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 16px; margin-top: 10px;">
-          <p style="color: white; font-size: 17px; flex-shrink: 0;">Ed.Fisica</p>
-          <ion-card-subtitle style="color: white; opacity: 60%; flex-grow: 1; text-align: center;">70%</ion-card-subtitle>
-          <ion-img src="assets/imagenes/edfisica.png" style="width: 59px; height: 59px; flex-shrink: 0; opacity: 63%;"></ion-img>
-        </div>
-      </ion-card>
-
     </div>
   </div>
+
+
 
   <footer>
     <ion-tabs>
@@ -59,5 +37,4 @@
       </ion-tab-bar>
     </ion-tabs>
   </footer>
-
 </ion-content>

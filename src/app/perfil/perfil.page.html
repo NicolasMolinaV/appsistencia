@@ -7,28 +7,20 @@
     <h1 #animatedHeader class="animated-header" style="margin-right: 10px; font-size: 32px;">Perfil</h1>
   </div>
 
-
-
-  <div id="main-content" class="ion-padding" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh;">
-    <div> 
-      <ion-card class="black-card" [routerLink]="['/noche']" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 20px;"> 
-        <p style="color: white; font-size: 17px; margin-top: 15px; text-align: center;">Usuario</p>
+  <ion-card class="custom-card" style="border-radius: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 50vh; z-index: 5;">
+    <ion-card-content style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; z-index: 5;">
+      <ion-icon style="height: 100px; width: 100px;" name="person-circle-outline"></ion-icon>
+  
+      <div style="text-align: center; color: white;">
+        <p style="font-size: 18px; margin: 5px 0;"><strong>Usuario:</strong> {{ userData?.usuario }}</p>
+        <p style="font-size: 16px; margin: 5px 0;"><strong>Correo:</strong> {{ userData?.email }}</p>
+      </div>
+  
+      <ion-card (click)="logout()" class="black-card" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); display: flex; justify-content: center; align-items: center; z-index: 10;">
+        <p style="color: white; font-size: 17px; margin: 0; text-align: center; z-index: 10;">Cerrar sesión</p>
       </ion-card>
-    </div>
-    
-    <div> 
-      <ion-card class="black-card" [routerLink]="['/noche']" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 20px;"> 
-        <p style="color: white; font-size: 17px; margin-top: 15px; text-align: center;">Correo</p>
-      </ion-card>
-    </div>
-
-    <div>
-      <ion-card (click)="logout()" class="black-card" style="width: 267px; height: 49px; color: #252B2B; opacity: 73%; border-radius: 24px; border: 2px solid rgba(255, 178, 103, 0.6); position: relative; z-index: 2; margin-bottom: 64px;"> 
-        <p style="color: white; font-size: 17px; margin-top: 15px; text-align: center;">Cerrar sesión</p>
-      </ion-card>
-    </div>
-    
-  </div>
+    </ion-card-content>
+  </ion-card>
 
   <footer>
     <ion-tabs>
