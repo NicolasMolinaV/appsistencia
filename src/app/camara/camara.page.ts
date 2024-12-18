@@ -17,7 +17,7 @@ export class CamaraPage implements OnInit {
 
   private targetLatitude = -33.598914087532926; 
   private targetLongitude = -70.70569490856572; 
-  private allowedDistance = 500; 
+  private allowedDistance = 1000; 
 
   constructor(
     private loadingController: LoadingController,
